@@ -29,10 +29,23 @@ contentOutputDiv.setAttribute("class", "content__output-body");
 content.appendChild(contentOutput);
 
 form.addEventListener("submit", getFromValue);
-button.addEventListener(
-  "touchend",
-  form.addEventListener("submit", getFromValue)
-);
+
+if (
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
+    navigator.userAgent
+  )
+) {
+  button.addEventListener(
+    "touchend",
+    function (ev) {
+      ev.preventDefault();
+      getFromValue;
+    },
+    false
+  );
+} else {
+  form.addEventListener("submit", getFromValue);
+}
 
 let div = document.createElement("div");
 contentBody.appendChild(div);
@@ -69,10 +82,8 @@ function getFromValue(event) {
       const objCurrnecy = serverResponse.currency;
       const objKeysArray = Object.keys(obj);
       const objValuesArray = Object.values(obj);
-      console.log(objCurrnecy);
 
       for (var i = 0; i < objValuesArray.length; i++) {
-        console.log(objValuesArray[i]);
         var parentDiv = document.createElement("div");
         var airlineP = document.createElement("p");
         var originP = document.createElement("p");

@@ -40,6 +40,7 @@ if (
     function (ev) {
       ev.preventDefault();
       getFromValue;
+      alert("Hello");
     },
     false
   );

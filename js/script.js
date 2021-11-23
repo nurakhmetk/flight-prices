@@ -102,6 +102,10 @@ function getFromValue(event) {
 
   xhr.open("GET", result);
   xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+  xhr.setRequestHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
 
   xhr.send();
 }

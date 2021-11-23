@@ -521,6 +521,10 @@ select:focus {
   border-radius: 8px;
 }
 
+a:visited {
+  color: blue;
+}
+
 @media screen and (max-width: 980px) {
   .content__output {
     height: 100vh;
@@ -599,13 +603,16 @@ select:focus {
 
   .container {
     height: auto;
+    width: 100vw;
   }
 
   .content {
+    position: relative;
     height: auto;
+    width: 95%;
     margin: 0 auto;
     top: 0;
-    left: 20px;
+    left: 0;
     -webkit-transform: none;
         -ms-transform: none;
             transform: none;

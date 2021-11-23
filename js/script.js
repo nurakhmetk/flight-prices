@@ -49,7 +49,7 @@ function getFromValue(event) {
   const departDate = "depart_date=";
   const returnDate = "return_date=";
   const apiUrl =
-    "https://api.travelpayouts.com/v1/prices/calendar?calendar_type=departure_date";
+    "https://cors-anywhere.herokuapp.com/https://api.travelpayouts.com/v1/prices/calendar?calendar_type=departure_date";
   const token = "token=1b74596b5a8f332ac7268a410709eca6";
 
   let result = null;
@@ -101,13 +101,21 @@ function getFromValue(event) {
   });
 
   xhr.open("GET", result);
+
   xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+  xhr.setRequestHeader("Access-Control-Allow-Credentials", "true");
   xhr.setRequestHeader(
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
+    "content-type",
+    "Authorization"
+  );
+  xhr.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+  xhr.setRequestHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With, content-type"
   );
 
-  xhr.send();
+  xhr.send(data);
 }
 
 //================================================================

@@ -5,6 +5,7 @@ const destinationInputValue = document.getElementById("destinationInput");
 const departureDateValue = document.getElementById("departureDate");
 const returnDateValue = document.getElementById("returnDate");
 const currencyValue = document.getElementById("currency");
+const button = document.getElementById("button");
 
 const airlineP = document.getElementById("airline-p");
 const originP = document.getElementById("origin-p");
@@ -28,6 +29,10 @@ contentOutputDiv.setAttribute("class", "content__output-body");
 content.appendChild(contentOutput);
 
 form.addEventListener("submit", getFromValue);
+button.addEventListener(
+  "touchend",
+  form.addEventListener("submit", getFromValue)
+);
 
 let div = document.createElement("div");
 contentBody.appendChild(div);

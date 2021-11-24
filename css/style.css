@@ -355,6 +355,19 @@ html {
   margin-top: 10px;
 }
 
+.body-content__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
 .origin-input {
   width: 100%;
   display: -webkit-box;
@@ -507,14 +520,19 @@ select:focus {
 }
 
 .submit {
-  height: 40px;
-  font-size: 22px;
+  height: 35px;
+  font-size: 18px;
   text-transform: uppercase;
-  margin-top: 20px;
   border-radius: 12px;
-  width: 50%;
-  -ms-flex-item-align: center;
-      align-self: center;
+  width: 15%;
+}
+
+.refresh {
+  width: 15%;
+  border-radius: 10px;
+  height: 35px;
+  text-transform: uppercase;
+  font-size: 18px;
 }
 
 .input {
@@ -523,6 +541,11 @@ select:focus {
 
 a:visited {
   color: blue;
+}
+
+input,
+select {
+  height: 40px;
 }
 
 @media screen and (max-width: 980px) {

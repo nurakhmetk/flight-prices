@@ -54,6 +54,7 @@ function getFromValue(event) {
   const token = "token=1b74596b5a8f332ac7268a410709eca6";
 
   let result = null;
+
   result = `${apiUrl}&${origin}${data.OriginCity}&${destination}${data.DestinationCity}&${departDate}${data.DepartureDate}&${returnDate}${data.ReturnDate}&${currency}${data.Currency}&${token}`;
 
   const xhr = new XMLHttpRequest();
@@ -79,9 +80,14 @@ function getFromValue(event) {
         originP.innerHTML += `Origin City: ${objValuesArray[i].origin}`;
         destinationP.innerHTML += `Destination City: ${objValuesArray[i].destination}`;
         departureP.innerHTML += `Departure Date: ${objValuesArray[i].departure_at}`;
-        returnP.innerHTML += `Return Date: ${objValuesArray[i].return_at}`;
         flightNumberP.innerHTML += `Flight Number: ${objValuesArray[i].flight_number}`;
         priceP.innerHTML += `Price: ${objValuesArray[i].price} ${objCurrnecy}`;
+
+        if (returnDateValue.value === "") {
+          console.log("Empty");
+        } else {
+          returnP.innerHTML += `Return Date: ${objValuesArray[i].return_at}`;
+        }
 
         parentDiv.setAttribute("class", "parent-div");
 

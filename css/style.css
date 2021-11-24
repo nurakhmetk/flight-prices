@@ -382,6 +382,10 @@ html {
           justify-content: space-evenly;
 }
 
+.destination-input {
+  width: 100%;
+}
+
 .output-content {
   width: 80%;
   display: -webkit-box;
@@ -438,14 +442,13 @@ select:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
 }
 
 .dates__departure {
-  margin-right: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -528,11 +531,15 @@ select:focus {
 }
 
 .refresh {
-  width: 15%;
+  width: 18%;
   border-radius: 10px;
   height: 35px;
   text-transform: uppercase;
   font-size: 18px;
+}
+
+.select-input {
+  width: 40%;
 }
 
 .input {
@@ -548,10 +555,30 @@ select {
   height: 40px;
 }
 
+@media screen and (max-width: 1325px) {
+  .submit {
+    width: 15%;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .refresh {
+    width: 20%;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}
+
 @media screen and (max-width: 980px) {
   .content__output {
     height: 100vh;
     margin: 0;
+  }
+
+  .refresh {
+    width: 25%;
+    font-size: 18px;
+    margin-bottom: 10px;
   }
 }
 
@@ -675,5 +702,19 @@ select {
     width: 90%;
     height: 0%;
     font-size: 27px;
+  }
+
+  .submit {
+    width: 45%;
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .refresh {
+    width: 48%;
+    height: 40px;
+    font-size: 20 px;
+    margin-bottom: 10px;
   }
 }

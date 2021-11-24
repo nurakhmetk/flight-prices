@@ -30,24 +30,6 @@ content.appendChild(contentOutput);
 
 form.addEventListener("submit", getFromValue);
 
-if (
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
-    navigator.userAgent
-  )
-) {
-  button.addEventListener(
-    "touchend",
-    function (ev) {
-      ev.preventDefault();
-      getFromValue;
-      alert("Hello");
-    },
-    false
-  );
-} else {
-  form.addEventListener("submit", getFromValue);
-}
-
 let div = document.createElement("div");
 contentBody.appendChild(div);
 div.setAttribute("class", "created-div");

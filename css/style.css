@@ -193,6 +193,7 @@ html {
   width: 100vw;
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: lightslategray;
 }
 
 .wrapper {
@@ -259,6 +260,8 @@ html {
 .content__body {
   width: 100%;
   height: 50vh;
+  position: relative;
+  left: 0;
   background-color: lightslategray;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -299,7 +302,7 @@ html {
 .content__output {
   width: 100%;
   height: 80%;
-  padding: 0 10%;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -313,7 +316,6 @@ html {
   background-color: lightslategray;
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
-  overflow: auto;
   border: 1px solid black;
 }
 
@@ -323,9 +325,6 @@ html {
   display: flex;
   width: 100%;
   height: 80%;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -494,7 +493,7 @@ select:focus {
 }
 
 .parent-div {
-  width: 80%;
+  width: 100%;
   text-align: start;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -553,6 +552,17 @@ a:visited {
 input,
 select {
   height: 40px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 10px 20px;
+  border: 1px solid #000;
 }
 
 @media screen and (max-width: 1325px) {

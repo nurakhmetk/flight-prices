@@ -90,27 +90,21 @@ function getFromValue(event) {
       heading_7.innerHTML = "Price";
       let parentDiv = document.createElement("div");
       for (var i = 0; i < objValuesArray.length; i++) {
-        // var airlineP = document.createElement("p");
-        // var originP = document.createElement("p");
-        // var destinationP = document.createElement("p");
-        // var departureP = document.createElement("p");
-        // var returnP = document.createElement("p");
-        // var flightNumberP = document.createElement("p");
-        // var priceP = document.createElement("p");
-        // airlineP.innerHTML += `Airline: ${objValuesArray[i].airline}`;
-        // originP.innerHTML += `Origin City: ${objValuesArray[i].origin}`;
-        // destinationP.innerHTML += `Destination City: ${objValuesArray[i].destination}`;
-        // departureP.innerHTML += `Departure Date: ${objValuesArray[i].departure_at}`;
-        // flightNumberP.innerHTML += `Flight Number: ${objValuesArray[i].flight_number}`;
-        // priceP.innerHTML += `Price: ${objValuesArray[i].price} ${objCurrnecy}`;
-
-        // if (returnDateValue.value === "") {
-        //   console.log("Empty");
-        // } else {
-        //   returnP.innerHTML += `Return Date: ${objValuesArray[i].return_at}`;
-        // }
-
         parentDiv.setAttribute("class", "parent-div");
+
+        var depDate = objValuesArray[i].departure_at;
+        depDateArray = depDate.split("");
+        var depYear = depDateArray.slice(0, 4).join("");
+        var depMonth = depDateArray.slice(5, 7).join("");
+        var depDay = depDateArray.slice(8, 10).join("");
+        var depTime = depDateArray.slice(11, 16).join("");
+
+        var retDate = objValuesArray[i].return_at;
+        retDateArray = retDate.split("");
+        var retYear = retDateArray.slice(0, 4).join("");
+        var retMonth = retDateArray.slice(5, 7).join("");
+        var retDay = retDateArray.slice(8, 10).join("");
+        var retTime = retDateArray.slice(11, 16).join("");
 
         ///
 
@@ -134,9 +128,9 @@ function getFromValue(event) {
         let row_2_data_4 = document.createElement("td");
         row_2_data_4.innerHTML = `${objValuesArray[i].flight_number}`;
         let row_2_data_5 = document.createElement("td");
-        row_2_data_5.innerHTML = `${objValuesArray[i].departure_at}`;
+        row_2_data_5.innerHTML = `${depDay}-${depMonth}-${depYear} ${depTime}`;
         let row_2_data_6 = document.createElement("td");
-        row_2_data_6.innerHTML = `${objValuesArray[i].return_at}`;
+        row_2_data_6.innerHTML = `${retDay}-${retMonth}-${retYear} ${retTime}`;
         let row_2_data_7 = document.createElement("td");
         row_2_data_7.innerHTML = `${objValuesArray[i].price} ${objCurrnecy}`;
 
@@ -149,34 +143,11 @@ function getFromValue(event) {
         row_2.appendChild(row_2_data_7);
         tbody.appendChild(row_2);
 
-        // Creating and adding data to third row of the table
-        // let row_3 = document.createElement("tr");
-        // let row_3_data_1 = document.createElement("td");
-        // row_3_data_1.innerHTML = "2.";
-        // let row_3_data_2 = document.createElement("td");
-        // row_3_data_2.innerHTML = "Adam White";
-        // let row_3_data_3 = document.createElement("td");
-        // row_3_data_3.innerHTML = "Microsoft";
-
-        // row_3.appendChild(row_3_data_1);
-        // row_3.appendChild(row_3_data_2);
-        // row_3.appendChild(row_3_data_3);
-        // tbody.appendChild(row_3);
-        ///
         parentDiv.appendChild(table);
-        // parentDiv.appendChild(airlineP);
-        // parentDiv.appendChild(originP);
-        // parentDiv.appendChild(destinationP);
-        // parentDiv.appendChild(flightNumberP);
-        // parentDiv.appendChild(priceP);
-        // parentDiv.appendChild(departureP);
-        // parentDiv.appendChild(returnP);
 
-        contentOutputDiv.appendChild(parentDiv);
         contentOutput.appendChild(contentOutputDiv);
-        console.log(result);
-        console.log(departureDateValue.value);
       }
+      contentOutputDiv.appendChild(parentDiv);
     }
   });
 
